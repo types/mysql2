@@ -1,0 +1,20 @@
+{
+  "name": "@types/mysql2",
+  "version": "1.0.0",
+  "description": "Typings for mysql2",
+  "scripts": {
+    "build": "typings bundle -o test/bundle.d.ts",
+    "test": "tsc -p test",
+    "lint": "tslint -c tslint.json \"lib/**/*.d.ts\" index.d.ts",
+    "typedoc": "typedoc --includeDeclarations --excludeExternals --name mysql --mode file --readme none --out typedoc lib index.d.ts typings/index.d.ts"
+  },
+  "author": "Felix Becker <felix.b@outlook.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "mysql": "~2.11.1",
+    "tslint": "^3.13.0",
+    "typedoc": "^0.5.1",
+    "typescript": "^2.0.9",
+    "typings": "^2.0.0"
+  }
+}

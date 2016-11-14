@@ -1,0 +1,12 @@
+{
+  "name": "mysql2",
+  "version": "1.1.1",
+  "homepage": "https://github.com/types/npm-mysql2",
+  "main": "index.d.ts",
+  "globalDependencies": {
+    "node": "registry:env/node#6.0.0+20161105011511"
+  },
+  "dependencies": {
+    "mysql": "registry:npm/mysql#2.11.1+20161114210614"
+  }
+}
