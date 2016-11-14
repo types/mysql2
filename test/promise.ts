@@ -9,15 +9,15 @@ let connection = mysql.createConnection({
 });
 
 connection.connect()
-    .then(() => connection.query('SELECT 1 + 1 AS solution'))
+    .then(() => connection.query<mysql.RowDataPacket[]>('SELECT 1 + 1 AS solution'))
     .then(([rows, fields]) => {
-        console.log('The solution is: ', (<mysql.RowDataPacket[]>rows)[0]['solution']);
+        console.log('The solution is: ', rows[0]['solution']);
     });
 
 connection.connect()
-    .then(() => connection.execute('SELECT 1 + 1 AS solution'))
+    .then(() => connection.execute<mysql.RowDataPacket[]>('SELECT 1 + 1 AS solution'))
     .then(([rows, fields]) => {
-        console.log('The solution is: ', (<mysql.RowDataPacket[]>rows)[0]['solution']);
+        console.log('The solution is: ', rows[0]['solution']);
     });
 
 /// Pools
@@ -31,14 +31,14 @@ let poolConfig = {
 
 let pool = mysql.createPool(poolConfig);
 
-pool.query('SELECT 1 + 1 AS solution')
+pool.query<mysql.RowDataPacket[]>('SELECT 1 + 1 AS solution')
     .then(([rows, fields]) => {
-        console.log('The solution is: ', (<mysql.RowDataPacket[]>rows)[0]['solution']);
+        console.log('The solution is: ', rows[0]['solution']);
     });
 
-pool.execute('SELECT 1 + 1 AS solution')
+pool.execute<mysql.RowDataPacket[]>('SELECT 1 + 1 AS solution')
     .then(([rows, fields]) => {
-        console.log('The solution is: ', (<mysql.RowDataPacket[]>rows)[0]['solution']);
+        console.log('The solution is: ', rows[0]['solution']);
     });
 
 async function test() {
