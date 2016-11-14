@@ -3,8 +3,6 @@
 
 Typescript Typings for [mysql2](https://www.npmjs.com/package/mysql2).
 
-## [API Documentation](http://typed-mysql2.surge.sh)
-
 ## Installation
 ```sh
 typings install --save mysql2
