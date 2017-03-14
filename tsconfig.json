@@ -5,8 +5,7 @@
     "target": "es2015",
     "module": "commonjs",
     "typeRoots": [
-      "../typings/globals",
-      "../typings/modules"
+      "./typings/globals"
     ]
   }
 }

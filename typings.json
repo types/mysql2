@@ -4,9 +4,9 @@
   "homepage": "https://github.com/types/npm-mysql2",
   "main": "index.d.ts",
   "globalDependencies": {
-    "node": "registry:env/node#6.0.0+20161105011511"
+    "node": "registry:env/node#6.0.0+20170213133316"
   },
   "dependencies": {
-    "mysql": "registry:npm/mysql#2.11.1+20161114210614"
+    "mysql": "registry:npm/mysql#2.11.1+20161114232222"
   }
 }
