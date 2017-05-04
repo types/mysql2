@@ -1,4 +1,6 @@
 # Typed mysql2
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/types/npm-mysql2.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/types/npm-mysql2.svg?branch=master)](https://travis-ci.org/types/npm-mysql2)
 
 Typescript Typings for [mysql2](https://www.npmjs.com/package/mysql2).
