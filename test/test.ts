@@ -223,10 +223,17 @@ pool.getConnection(function (err, connection) {
 // create
 let poolCluster = mysql.createPoolCluster();
 
-poolCluster.add(poolConfig); // anonymous group
-poolCluster.add('MASTER', poolConfig);
-poolCluster.add('SLAVE1', poolConfig);
-poolCluster.add('SLAVE2', poolConfig);
+let poolClusterConfig = {
+    canRetry: true,
+    removeNodeErrorCount: 2,
+    restoreNodeTimeout: 3,
+    defaultSelector: 'RANDOM'
+};
+
+poolCluster.add(poolClusterConfig); // anonymous group
+poolCluster.add('MASTER', poolClusterConfig);
+poolCluster.add('SLAVE1', poolClusterConfig);
+poolCluster.add('SLAVE2', poolClusterConfig);
 
 // Target Group : ALL(anonymous, MASTER, SLAVE1-2), Selector : round-robin(default)
 poolCluster.getConnection(function (err, connection) { });
