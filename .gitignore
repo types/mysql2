@@ -5,3 +5,4 @@ node_modules/
 typedoc/
 typings/
 typedoc/
+package-lock.json
