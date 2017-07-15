@@ -3,16 +3,16 @@
     "target": "es2015",
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "noEmit": true,
     "module": "commonjs",
     "typeRoots": [
       "../typings/globals",
       "../typings/modules"
     ]
   },
-  "files": [
-    "test.ts",
-    "promise.ts",
-    "bundle.d.ts",
+  "include": [
+    "./*.ts",
+    "./bundle.d.ts",
     "../typings/index.d.ts"
   ]
 }
