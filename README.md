@@ -1,13 +1,17 @@
 # Typed mysql2
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/types/npm-mysql2.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/types/npm-mysql2.svg?branch=master)](https://travis-ci.org/types/npm-mysql2)
+[![Greenkeeper badge](https://badges.greenkeeper.io/types/mysql2.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/types/mysql2.svg?branch=master)](https://travis-ci.org/types/mysql2)
 
 Typescript Typings for [mysql2](https://www.npmjs.com/package/mysql2).
 
 ## Installation
 ```sh
 typings install --save mysql2
+```
+or
+```sh
+npm install --save-dev types/mysql2#semver:version
 ```
 
 ## Usage
