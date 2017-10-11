@@ -59,6 +59,7 @@ export interface Pool extends EventEmitter {
 
     getConnection(): Promise<PoolConnection>;
     on(event: 'connection', listener: (connection: PoolConnection) => any): this;
+    end(): Promise<void>;
 }
 
 export function createConnection(connectionUri: string): Connection;
