@@ -26,6 +26,8 @@ export interface Connection extends EventEmitter {
     execute<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(options: QueryOptions): Promise<[T, FieldPacket[]]>;
     execute<T extends RowDataPacket[][] | RowDataPacket[] | OkPacket | OkPacket[]>(options: QueryOptions, values: any | any[] | { [param: string]: any }): Promise<[T, FieldPacket[]]>;
 
+    unprepare(sql: string): void;
+
     end(options?: any): Promise<void>;
 
     destroy(): void;
