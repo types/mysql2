@@ -24,6 +24,29 @@ export interface Pool extends mysql.Connection {
     on(event: 'enqueue', listener: () => any): this;
 }
 
+export interface ConnectionOptions extends mysql.ConnectionOptions {
+    charsetNumber?: number;
+    compress?: boolean;
+    authSwitchHandler?: (data: any, callback: () => void) => any;
+    connectAttributes?: { [param: string]: any };
+    decimalNumbers?: boolean;
+    isServer?: boolean;
+    maxPreparedStatements?: number;
+    namedPlaceholders?: boolean;
+    nestTables?: boolean | string;
+    passwordSha1?: string;
+    pool?: any;
+    rowsAsArray?: boolean;
+    stream?: any;
+    uri?: string;
+    connectionLimit?: number;
+    Promise?: any;
+    queueLimit?: number;
+    waitForConnections?: boolean;
+}
+
+export interface PoolOptions extends mysql.PoolOptions, ConnectionOptions {}
+
 export function createConnection(connectionUri: string): Connection;
-export function createConnection(config: mysql.ConnectionOptions): Connection;
-export function createPool(config: mysql.PoolOptions): Pool;
+export function createConnection(config: ConnectionOptions): Connection;
+export function createPool(config: PoolOptions): Pool;
