@@ -11,6 +11,7 @@ let connection = mysql.createConnection({
 });
 
 connection.connect();
+connection.ping();
 
 connection.query('SELECT 1 + 1 AS solution', function (err: mysql.QueryError, rows: mysql.RowDataPacket[], fields: mysql.FieldPacket) {
     if (err) {

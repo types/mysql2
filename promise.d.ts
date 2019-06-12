@@ -9,6 +9,7 @@ export interface Connection extends EventEmitter {
     threadId: number;
 
     connect(): Promise<void>;
+    ping(): Promise<void>;
 
     beginTransaction(): Promise<void>;
     commit(): Promise<void>;

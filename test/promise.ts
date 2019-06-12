@@ -46,6 +46,7 @@ pool.execute<mysql.RowDataPacket[]>('SELECT 1 + 1 AS solution')
 async function test() {
     const connection = await pool.getConnection();
     // Use the connection
+    await connection.ping();
     const rows = await connection.query('SELECT something FROM sometable');
     // And done with the connection.
     connection.release();
