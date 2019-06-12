@@ -13,6 +13,7 @@ export interface Connection extends EventEmitter {
     beginTransaction(): Promise<void>;
     commit(): Promise<void>;
     rollback(): Promise<void>;
+    ping(): Promise<void>;
 
     changeUser(options: ConnectionOptions): Promise<void>;
 
