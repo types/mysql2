@@ -52,6 +52,10 @@ export interface ConnectionOptions extends mysql.ConnectionOptions {
 
 export interface PoolOptions extends mysql.PoolOptions, ConnectionOptions {}
 
+export interface FieldPacket extends mysql.FieldPacket {
+    columnType: string
+}
+
 export function createConnection(connectionUri: string): Connection;
 export function createConnection(config: ConnectionOptions): Connection;
 export function createPool(config: PoolOptions): Pool;
