@@ -24,6 +24,22 @@ export interface Pool extends mysql.Connection {
     on(event: 'enqueue', listener: () => any): this;
 }
 
+type authPlugins =
+    (pluginMetadata: { connection: Connection; command: string }) =>
+        (pluginData: Buffer) => Promise<string>;
+
+export interface ConnectionOptions extends mysql.ConnectionOptions {
+    authPlugins?: {
+        [key: string]: authPlugins;
+    };
+}
+
+export interface PoolOptions extends mysql.PoolOptions {
+    authPlugins?: {
+        [key: string]: authPlugins;
+    };
+}
+
 export function createConnection(connectionUri: string): Connection;
-export function createConnection(config: mysql.ConnectionOptions): Connection;
-export function createPool(config: mysql.PoolOptions): Pool;
+export function createConnection(config: ConnectionOptions): Connection;
+export function createPool(config: PoolOptions): Pool;
