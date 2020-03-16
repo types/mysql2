@@ -1,5 +1,5 @@
 
-import {RowDataPacket, OkPacket, FieldPacket, QueryOptions, ConnectionOptions, PoolOptions} from './index';
+import {RowDataPacket, OkPacket, FieldPacket, QueryOptions, ConnectionOptions, PoolOptions, Connection as BaseConnection} from './index';
 import {EventEmitter} from 'events';
 export * from './index';
 
@@ -46,6 +46,7 @@ export interface Connection extends EventEmitter {
 }
 
 export interface PoolConnection extends Connection {
+    connection: BaseConnection;
     release(): void;
 }
 
