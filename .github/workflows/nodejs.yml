@@ -1,0 +1,21 @@
+name: nodejs
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ['ubuntu-latest']
+        node-version: [8, 10, 12]
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - run: npm install
+      - run: npm run build
+      - run: npm test
