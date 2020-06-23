@@ -22,6 +22,8 @@ export interface Pool extends mysql.Connection {
     execute<T extends mysql.RowDataPacket[][] | mysql.RowDataPacket[] | mysql.OkPacket | mysql.OkPacket[] | mysql.ResultSetHeader>(options: mysql.QueryOptions, callback?: (err: mysql.QueryError | null, result: T, fields?: mysql.FieldPacket[]) => any): mysql.Query;
     execute<T extends mysql.RowDataPacket[][] | mysql.RowDataPacket[] | mysql.OkPacket | mysql.OkPacket[] | mysql.ResultSetHeader>(options: mysql.QueryOptions, values: any | any[] | { [param: string]: any }, callback?: (err: mysql.QueryError | null, result: T, fields: mysql.FieldPacket[]) => any): mysql.Query;
     getConnection(callback: (err: NodeJS.ErrnoException, connection: PoolConnection) => any): void;
+    releaseConnection(connection: PoolConnection): void;
+    end(callback?: (err: Error) => any): void;
     on(event: 'connection', listener: (connection: PoolConnection) => any): this;
     on(event: 'acquire', listener: (connection: PoolConnection) => any): this;
     on(event: 'release', listener: (connection: PoolConnection) => any): this;
