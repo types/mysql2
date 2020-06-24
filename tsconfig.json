@@ -6,6 +6,9 @@
     "module": "commonjs",
     "typeRoots": [
       "./typings/globals"
+    ],
+    "types": [
+      "node"
     ]
   }
 }
