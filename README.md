@@ -6,11 +6,11 @@
 Typescript Typings for [mysql2](https://www.npmjs.com/package/mysql2).
 
 ## Installation
+
 ```sh
-typings install --save mysql2
-```
-or
-```sh
+npm install --save-dev types/mysql2
+
+# for specific version
 npm install --save-dev types/mysql2#semver:version
 ```
 
@@ -32,7 +32,6 @@ connection.execute('UPDATE posts SET title = ? WHERE id = ?', ['Hello World', 1]
 
 [More examples](./test)
 
-
 ## Contributing
-You can run them the tests with `npm run build` and `npm run test`.
 
+You can run them the tests with `yarn tsc`, `yarn lint` and  `yarn test`.

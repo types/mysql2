@@ -55,10 +55,10 @@ export interface ConnectionOptions extends mysql.ConnectionOptions {
 export interface PoolOptions extends mysql.PoolOptions, ConnectionOptions {}
 
 export interface FieldPacket extends mysql.FieldPacket {
-    columnType: number
-    columnLength: number
-    schema: string
-    characterSet: number
+    columnType: number;
+    columnLength: number;
+    schema: string;
+    characterSet: number;
 }
 
 type authPlugins =

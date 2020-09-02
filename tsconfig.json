@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "target": "es2015",
-    "module": "commonjs",
-    "typeRoots": [
-      "./typings/globals"
-    ]
-  }
+    "target": "es2015"
+  },
+  "files": ["index.d.ts"]
 }
