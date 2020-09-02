@@ -2,23 +2,24 @@
   "name": "@types/mysql2",
   "version": "1.0.0",
   "description": "Typings for mysql2",
+  "license": "ISC",
+  "author": "Felix Becker <felix.b@outlook.com>",
   "scripts": {
-    "build": "typings bundle -o test/bundle.d.ts",
-    "test": "tsc -p test",
     "lint": "tslint -c tslint.json \"lib/**/*.d.ts\" index.d.ts",
+    "test": "tsc -p test",
     "typedoc": "typedoc --includeDeclarations --excludeExternals --name mysql --mode file --readme none --out typedoc lib index.d.ts typings/index.d.ts"
   },
-  "author": "Felix Becker <felix.b@outlook.com>",
-  "license": "ISC",
-  "devDependencies": {
-    "mysql2": "^1.0.0",
-    "tslint": "^5.0.0",
-    "tslint-config-typings": "^0.3.1",
-    "typedoc": "^0.7.0",
-    "typescript": "^2.2.1",
-    "typings": "^2.0.0"
-  },
+  "types": "index.d.ts",
   "dependencies": {
-    "@types/mysql": "types/mysql"
+    "@types/mysql": "types/mysql",
+    "@types/node": "*"
+  },
+  "devDependencies": {
+    "mysql2": "^2.1.0",
+    "npm-check-updates": "^8.0.3",
+    "tslint": "^6.1.3",
+    "tslint-config-typings": "^0.3.1",
+    "typedoc": "^0.19.0",
+    "typescript": "^4.0.2"
   }
 }

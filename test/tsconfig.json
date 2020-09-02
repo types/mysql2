@@ -5,14 +5,8 @@
     "strictNullChecks": true,
     "noEmit": true,
     "module": "commonjs",
-    "typeRoots": [
-      "../typings/globals",
-      "../typings/modules"
-    ]
   },
   "include": [
-    "./*.ts",
-    "./bundle.d.ts",
-    "../typings/index.d.ts"
+    "./*.ts"
   ]
 }
