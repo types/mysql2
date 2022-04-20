@@ -219,6 +219,26 @@ pool.getConnection(function (err, connection) {
     });
 });
 
+pool = mysql.createPool('https://example.org/mysql/db');
+
+pool.getConnection(function (err, connection) {
+    // connected! (unless `err` is set)
+});
+
+pool.on('connection', function (connection) {
+    connection.query('SET SESSION auto_increment_increment=1');
+});
+
+pool.getConnection(function (err, connection) {
+    // Use the connection
+    connection.query('SELECT something FROM sometable', function (err, rows) {
+        // And done with the connection.
+        connection.release();
+
+        // Don't use the connection here, it has been returned to the pool.
+    });
+});
+
 /// PoolClusters
 
 // create
