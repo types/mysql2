@@ -79,4 +79,4 @@ export interface PoolOptions extends mysql.PoolOptions {
 
 export function createConnection(connectionUri: string): Connection;
 export function createConnection(config: ConnectionOptions): Connection;
-export function createPool(config: PoolOptions): Pool;
+export function createPool(config: PoolOptions | string): Pool;
