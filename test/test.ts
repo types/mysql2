@@ -1,7 +1,7 @@
 
 import * as fs from 'fs';
-import * as mysql from 'mysql2';
 import * as stream from 'stream';
+import * as mysql from '..';
 
 // Connections
 let connection = mysql.createConnection({
